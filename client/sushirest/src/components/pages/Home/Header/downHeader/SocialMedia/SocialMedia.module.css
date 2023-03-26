@@ -1,0 +1,21 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 6.61458333333vw;
+}
+
+.socialLogo{
+    width: 1.51041666667vw;
+    height: 1.51041666667vw;
+
+    margin-top: 4.6875vw;
+}
+
+.socialImg{
+    width: 1.51041666667vw;
+    height: 1.51041666667vw;
+}
+.SocialFirst{
+    margin-top: 13.8541666667vw;
+}

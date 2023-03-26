@@ -28,15 +28,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@lottiefiles/react-lottie-player", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:3.5.3"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:13.5.0"],\
             ["@types/jest", "npm:27.5.2"],\
+            ["@types/jquery", "npm:3.5.16"],\
             ["@types/node", "npm:16.18.16"],\
             ["@types/react", "npm:18.0.28"],\
             ["@types/react-dom", "npm:18.0.11"],\
+            ["eslint-config-react", "npm:1.1.7"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:18.2.0"],\
+            ["react-router-dom", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:6.9.0"],\
             ["react-scripts", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:5.0.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
             ["web-vitals", "npm:2.1.4"]\
@@ -3716,6 +3720,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@lottiefiles/react-lottie-player", [\
+        ["npm:3.5.3", {\
+          "packageLocation": "./.yarn/cache/@lottiefiles-react-lottie-player-npm-3.5.3-1b99195f06-083521730d.zip/node_modules/@lottiefiles/react-lottie-player/",\
+          "packageDependencies": [\
+            ["@lottiefiles/react-lottie-player", "npm:3.5.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:3.5.3", {\
+          "packageLocation": "./.yarn/__virtual__/@lottiefiles-react-lottie-player-virtual-52152541f0/0/cache/@lottiefiles-react-lottie-player-npm-3.5.3-1b99195f06-083521730d.zip/node_modules/@lottiefiles/react-lottie-player/",\
+          "packageDependencies": [\
+            ["@lottiefiles/react-lottie-player", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:3.5.3"],\
+            ["@types/react", "npm:18.0.28"],\
+            ["lottie-web", "npm:5.10.2"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@nicolo-ribaudo/eslint-scope-5-internals", [\
         ["npm:5.1.1-v1", {\
           "packageLocation": "./.yarn/cache/@nicolo-ribaudo-eslint-scope-5-internals-npm-5.1.1-v1-87df86be4b-f2e3b2d6a6.zip/node_modules/@nicolo-ribaudo/eslint-scope-5-internals/",\
@@ -3830,6 +3857,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "webpack-hot-middleware",\
             "webpack-plugin-serve",\
             "webpack"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@remix-run/router", [\
+        ["npm:1.4.0", {\
+          "packageLocation": "./.yarn/cache/@remix-run-router-npm-1.4.0-0d516afd34-707dce35a2.zip/node_modules/@remix-run/router/",\
+          "packageDependencies": [\
+            ["@remix-run/router", "npm:1.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4505,6 +4541,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/jquery", [\
+        ["npm:3.5.16", {\
+          "packageLocation": "./.yarn/cache/@types-jquery-npm-3.5.16-62a6b7d27d-13c995f15d.zip/node_modules/@types/jquery/",\
+          "packageDependencies": [\
+            ["@types/jquery", "npm:3.5.16"],\
+            ["@types/sizzle", "npm:2.3.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/json-schema", [\
         ["npm:7.0.11", {\
           "packageLocation": "./.yarn/cache/@types-json-schema-npm-7.0.11-79462ae5ca-527bddfe62.zip/node_modules/@types/json-schema/",\
@@ -4678,6 +4724,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/serve-static", "npm:1.15.1"],\
             ["@types/mime", "npm:3.0.1"],\
             ["@types/node", "npm:18.15.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/sizzle", [\
+        ["npm:2.3.3", {\
+          "packageLocation": "./.yarn/cache/@types-sizzle-npm-2.3.3-9403924950-586a9fb1f6.zip/node_modules/@types/sizzle/",\
+          "packageDependencies": [\
+            ["@types/sizzle", "npm:2.3.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8129,6 +8184,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["eslint-config-react", [\
+        ["npm:1.1.7", {\
+          "packageLocation": "./.yarn/cache/eslint-config-react-npm-1.1.7-6e3860b2e1-15d3d7f78e.zip/node_modules/eslint-config-react/",\
+          "packageDependencies": [\
+            ["eslint-config-react", "npm:1.1.7"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["eslint-config-react-app", [\
         ["npm:7.0.1", {\
           "packageLocation": "./.yarn/cache/eslint-config-react-app-npm-7.0.1-78bab43841-a67e082180.zip/node_modules/eslint-config-react-app/",\
@@ -11504,6 +11568,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["lottie-web", [\
+        ["npm:5.10.2", {\
+          "packageLocation": "./.yarn/cache/lottie-web-npm-5.10.2-b1628c6dac-9ec80b479d.zip/node_modules/lottie-web/",\
+          "packageDependencies": [\
+            ["lottie-web", "npm:5.10.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["lower-case", [\
         ["npm:2.0.2", {\
           "packageLocation": "./.yarn/cache/lower-case-npm-2.0.2-151055f1c2-83a0a5f159.zip/node_modules/lower-case/",\
@@ -14673,6 +14746,57 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-router", [\
+        ["npm:6.9.0", {\
+          "packageLocation": "./.yarn/cache/react-router-npm-6.9.0-0f1035743a-b2a5f42e04.zip/node_modules/react-router/",\
+          "packageDependencies": [\
+            ["react-router", "npm:6.9.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:0b84a92ef74ba0cc0fee68407f0bcea73812f5be9ad44cb5b526e5f652c74362a42a8d9706cb431799332dbe70bb7d0a50cc4c23c2931b7071806aab25c93666#npm:6.9.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-router-virtual-f7f82dabc9/0/cache/react-router-npm-6.9.0-0f1035743a-b2a5f42e04.zip/node_modules/react-router/",\
+          "packageDependencies": [\
+            ["react-router", "virtual:0b84a92ef74ba0cc0fee68407f0bcea73812f5be9ad44cb5b526e5f652c74362a42a8d9706cb431799332dbe70bb7d0a50cc4c23c2931b7071806aab25c93666#npm:6.9.0"],\
+            ["@remix-run/router", "npm:1.4.0"],\
+            ["@types/react", "npm:18.0.28"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-router-dom", [\
+        ["npm:6.9.0", {\
+          "packageLocation": "./.yarn/cache/react-router-dom-npm-6.9.0-4aea6458fc-4d593491ab.zip/node_modules/react-router-dom/",\
+          "packageDependencies": [\
+            ["react-router-dom", "npm:6.9.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:6.9.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-router-dom-virtual-0b84a92ef7/0/cache/react-router-dom-npm-6.9.0-4aea6458fc-4d593491ab.zip/node_modules/react-router-dom/",\
+          "packageDependencies": [\
+            ["react-router-dom", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:6.9.0"],\
+            ["@remix-run/router", "npm:1.4.0"],\
+            ["@types/react", "npm:18.0.28"],\
+            ["@types/react-dom", "npm:18.0.11"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:18.2.0"],\
+            ["react-router", "virtual:0b84a92ef74ba0cc0fee68407f0bcea73812f5be9ad44cb5b526e5f652c74362a42a8d9706cb431799332dbe70bb7d0a50cc4c23c2931b7071806aab25c93666#npm:6.9.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-scripts", [\
         ["npm:5.0.1", {\
           "packageLocation": "./.yarn/cache/react-scripts-npm-5.0.1-d06bd2d5ad-92afa2f245.zip/node_modules/react-scripts/",\
@@ -16006,15 +16130,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["sushirest", "workspace:."],\
+            ["@lottiefiles/react-lottie-player", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:3.5.3"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:13.5.0"],\
             ["@types/jest", "npm:27.5.2"],\
+            ["@types/jquery", "npm:3.5.16"],\
             ["@types/node", "npm:16.18.16"],\
             ["@types/react", "npm:18.0.28"],\
             ["@types/react-dom", "npm:18.0.11"],\
+            ["eslint-config-react", "npm:1.1.7"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:18.2.0"],\
+            ["react-router-dom", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:6.9.0"],\
             ["react-scripts", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:5.0.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
             ["web-vitals", "npm:2.1.4"]\
