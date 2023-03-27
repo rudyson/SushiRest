@@ -1,4 +1,4 @@
-.LinkText {
+.linkText {
     margin-top: 3.4375vw;
     margin-left: 6.25vw;
 
@@ -14,11 +14,11 @@
     text-transform: uppercase;
     font-weight: 400;
 }
-.FirstLink{
+.firstLink{
     margin-left: 9.73958333333vw;
 }
 
-.MenuWrapper {
+.menuWrapper {
     display: flex;
     flex-direction: row;
 }

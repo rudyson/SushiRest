@@ -1,0 +1,6 @@
+.wrapper{
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 4.16666666667vw;
+}

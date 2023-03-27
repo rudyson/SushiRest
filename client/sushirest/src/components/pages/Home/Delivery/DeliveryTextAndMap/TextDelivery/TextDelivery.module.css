@@ -1,0 +1,22 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.text{
+    margin-top: 4.16666666667vw;
+
+    width: 8.06458333333vw;
+    height: 1.82291666667vw;
+
+
+    font-family: NotoSansMedium;
+    font-weight: 500;
+    font-size: 1.25vw;
+    line-height: 1.82291666667vw;
+
+
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    color: #2E2E2E;
+}

@@ -16,18 +16,18 @@ const Menu = () => {
         setSelected(page);
     };
     return (
-        <nav className={style.MenuWrapper}>
+        <nav className={style.menuWrapper}>
             <Link onClick={() => handlePageClick('home')}
-                  className={`${style.LinkText} ${style.FirstLink} ${selected === 'home' ? style.selected : ''}`}
+                  className={`${style.linkText} ${style.firstLink} ${selected === 'home' ? style.selected : ''}`}
                   to="/">Home</Link>
             <Link onClick={() => handlePageClick('menu')}
-                  className={`${style.LinkText} ${selected === 'menu' ? style.selected : ''}`}
+                  className={`${style.linkText} ${selected === 'menu' ? style.selected : ''}`}
                   to="/Menu">Menu</Link>
             <Link onClick={() => handlePageClick('delivery')}
-                  className={`${style.LinkText} ${selected === 'delivery' ? style.selected : ''}`}
+                  className={`${style.linkText} ${selected === 'delivery' ? style.selected : ''}`}
                   to="/Delivery">Delivery</Link>
             <Link onClick={() => handlePageClick('aboutus')}
-                  className={`${style.LinkText} ${selected === 'aboutus' ? style.selected : ''}`}
+                  className={`${style.linkText} ${selected === 'aboutus' ? style.selected : ''}`}
                   to="/AboutUs">About Us</Link>
         </nav>
     );

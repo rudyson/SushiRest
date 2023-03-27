@@ -1,9 +1,9 @@
 import style from "./MainPicHeader.module.css"
-import MainPic from "../../../../../../pics/mainPic-min.png"
+import MainPic from "../../../../../../pics/headerPic/mainPic-min.png"
 const MainPicHeader = () => {
     return (
         <>
-            <img className={style.Pic} src={MainPic}></img>
+            <img className={style.pic} src={MainPic}></img>
         </>
     );
 }
