@@ -40,6 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-react", "npm:1.1.7"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:18.2.0"],\
+            ["react-multi-carousel", "npm:2.8.2"],\
             ["react-router-dom", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:6.9.0"],\
             ["react-scripts", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:5.0.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
@@ -14737,6 +14738,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-multi-carousel", [\
+        ["npm:2.8.2", {\
+          "packageLocation": "./.yarn/cache/react-multi-carousel-npm-2.8.2-2629689a5a-95a77120ec.zip/node_modules/react-multi-carousel/",\
+          "packageDependencies": [\
+            ["react-multi-carousel", "npm:2.8.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-refresh", [\
         ["npm:0.11.0", {\
           "packageLocation": "./.yarn/cache/react-refresh-npm-0.11.0-c0a4e59e76-112178a05b.zip/node_modules/react-refresh/",\
@@ -16142,6 +16152,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-react", "npm:1.1.7"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:18.2.0"],\
+            ["react-multi-carousel", "npm:2.8.2"],\
             ["react-router-dom", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:6.9.0"],\
             ["react-scripts", "virtual:a55d41c5bb321d8c545f5d7a26cb072fcd643a52aa9acc90105e7bd80d3f630f2c36d6625dba6aea6b4b1a691a9506a18809d7a9422e1f5ca89d42f47cc2d1d0#npm:5.0.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\

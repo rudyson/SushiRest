@@ -35,4 +35,10 @@ code {
   url("./fonts/NotoSansJP-Medium.otf") format("truetype");
   font-weight: 500;
 }
+@font-face {
+  font-family: "NotoSansThin";
+  src: local("NotoSansThin"),
+  url("./fonts/NotoSansJP-Thin.otf") format("truetype");
+  font-weight: 100;
+}
 

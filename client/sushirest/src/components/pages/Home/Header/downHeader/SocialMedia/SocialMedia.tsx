@@ -7,16 +7,16 @@ import facebook from "../../../../../../pics/SocialPics/facebook.png"
 const SocialMedia = () => {
     return (
         <div className={style.wrapper}>
-            <a className={`${style.socialLogo} ${style.socialFirst}`} href="https://www.instagram.com/" target="_blank">
+            <a className={`${style.socialLink} ${style.socialFirst}`} href="https://www.instagram.com/" target="_blank">
                 <img className={style.socialImg} src={insta}></img>
             </a>
-            <a className={style.socialLogo} href="https://web.telegram.org/"  target="_blank">
+            <a className={style.socialLink} href="https://web.telegram.org/"  target="_blank">
                 <img className={style.socialImg} src={telegram}></img>
             </a>
-            <a className={style.socialLogo} href="https://twitter.com/" target="_blank">
+            <a className={style.socialLink} href="https://twitter.com/" target="_blank">
                 <img className={style.socialImg} src={twitter}></img>
             </a>
-            <a className={style.socialLogo} href="https://www.facebook.com/" target="_blank">
+            <a className={style.socialLink} href="https://www.facebook.com/" target="_blank">
                 <img className={style.socialImg} src={facebook}></img>
             </a>
         </div>

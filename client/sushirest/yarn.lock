@@ -10640,6 +10640,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-multi-carousel@npm:^2.8.2":
+  version: 2.8.2
+  resolution: "react-multi-carousel@npm:2.8.2"
+  checksum: 95a77120ec11e0f0c33609617b873a56c639b30a3b186e0d00323fff03889b2761b62ca3f2734e04f6c1fe00866bf759939a62b4f4a847211ad6da8224c46274
+  languageName: node
+  linkType: hard
+
 "react-refresh@npm:^0.11.0":
   version: 0.11.0
   resolution: "react-refresh@npm:0.11.0"
@@ -11871,6 +11878,7 @@ __metadata:
     eslint-config-react: ^1.1.7
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-multi-carousel: ^2.8.2
     react-router-dom: ^6.9.0
     react-scripts: 5.0.1
     typescript: ^4.4.2
