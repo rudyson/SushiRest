@@ -6,9 +6,6 @@ namespace sushirestapi.Entities;
 public class Review : Entity
 {
 	[Required]
-	public Guid ReviewerId { get; set; }
-	
-	[Required]
 	[Precision(1, 1)]
 	[Range(1,5)]
 	public decimal Rate { get; set; }
