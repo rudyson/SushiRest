@@ -22,6 +22,7 @@ public class SushiRestDbContext : DbContext
 	public DbSet<Rate>? Rates { get; set; }
 	public DbSet<Review>? Reviews { get; set; }
 	public DbSet<Tag>? Tags { get; set; }
+	public DbSet<Category>? Categories { get; set; }
 
 	#endregion
 
@@ -52,6 +53,9 @@ public class SushiRestDbContext : DbContext
 		modelBuilder.Entity<Product>()
 			.HasMany(p => p.Rates)
 			.WithOne(r=> r.Product);
+		modelBuilder.Entity<Product>()
+			.HasOne(p => p.Category)
+			.WithMany(c => c.Products);
 		
 		modelBuilder.Entity<Rate>()
 			.HasOne(r=>r.RatedBy)

@@ -28,8 +28,8 @@ public class Product : Entity
 	#region EF Relations
 
 	public ICollection<Rate>? Rates { get; set; }
-	
 	public ICollection<Tag>? Tags { get; set; }
+	public Category? Category { get; set; }
 
 	#endregion
 }
