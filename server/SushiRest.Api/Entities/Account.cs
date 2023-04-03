@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace sushirestapi.Entities;
+namespace SushiRest.Api.Entities;
 /// <summary>
 /// User account with preferences
 /// </summary>

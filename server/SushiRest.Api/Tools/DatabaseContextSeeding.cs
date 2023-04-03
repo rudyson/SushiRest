@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using sushirestapi.Contexts;
-using sushirestapi.Entities;
+using SushiRest.Api.Contexts;
+using SushiRest.Api.Entities;
 
-namespace sushirestapi.Tools;
+namespace SushiRest.Api.Tools;
 /// <summary>
 /// Initial database seeding for filling context with start values
 /// </summary>

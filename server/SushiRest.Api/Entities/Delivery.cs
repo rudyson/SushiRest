@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace sushirestapi.Entities;
+namespace SushiRest.Api.Entities;
 /// <summary>
 /// Address model to use it in orders of products
 /// </summary>

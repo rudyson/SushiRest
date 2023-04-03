@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using sushirestapi.Entities;
+using SushiRest.Api.Entities;
 
-namespace sushirestapi.Models;
+namespace SushiRest.Api.Models;
 
 public class Order
 {

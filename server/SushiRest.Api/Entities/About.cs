@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace sushirestapi.Entities;
+namespace SushiRest.Api.Entities;
 /// <summary>
 /// This class represents a card for about us section
 /// </summary>

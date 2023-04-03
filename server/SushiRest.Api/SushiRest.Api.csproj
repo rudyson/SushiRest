@@ -4,6 +4,12 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>SushiRest.Api</AssemblyName>
+    <RootNamespace>SushiRest.Api</RootNamespace>
+    <PackageId>SushiRest.Api</PackageId>
+    <Authors>Ruslan Diadiushkin</Authors>
+    <Company>Sushi Rest</Company>
+    <Product>SushiRest.Api</Product>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +18,8 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="DotNetEnv" Version="2.5.0" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.2.9" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.9" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0-preview.2.23128.3" />
@@ -30,10 +38,6 @@
     <PackageReference Include="NLog.Extensions.Logging" Version="5.2.2" />
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Repositories" />
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace sushirestapi.Entities;
+namespace SushiRest.Api.Entities;
 /// <summary>
 /// Base product model for any position in restoraunt menu
 /// </summary>

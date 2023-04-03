@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace sushirestapi.Entities;
+namespace SushiRest.Api.Entities;
 /// <summary>
 /// Base class with GUID identifier
 /// </summary>

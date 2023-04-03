@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using sushirestapi.Entities;
+using SushiRest.Api.Entities;
 
-namespace sushirestapi.Contexts;
+namespace SushiRest.Api.Contexts;
 
 public class SushiRestDbContext : DbContext
 {

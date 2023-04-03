@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace sushirestapi.Entities;
+namespace SushiRest.Api.Entities;
 
 /// <summary>
 /// This model is designed to interact with the database and

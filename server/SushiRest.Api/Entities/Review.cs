@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace sushirestapi.Entities;
+namespace SushiRest.Api.Entities;
 
 public class Review : Entity
 {
