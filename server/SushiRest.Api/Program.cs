@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using SushiRest.Api.Contexts;
 using SushiRest.Api.Repositories;
 using SushiRest.Api.Tools;
@@ -45,7 +46,26 @@ builder.Services.AddAuthentication(options =>
 */
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options => {
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Sushi Rest API",
+        Version = "v1",
+        Description = "An API to to interact with the restaurant",
+        //TermsOfService = new Uri("https://example.com/terms"),
+        Contact = new OpenApiContact
+        {
+            Name = "Ruslan Diadiushkin",
+            Email = "contact@xnrudyson.anonaddy.me",
+            Url = new Uri("https://www.linkedin.com/in/rudyson"),
+        },
+        License = new OpenApiLicense
+        {
+            Name = "Sushi Rest API MIT License",
+            Url = new Uri("https://github.com/rudyson/SushiRest/blob/master/LICENSE"),
+        }
+    });
+});
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddDbContext<SushiRestDbContext>(options =>
 {
