@@ -39,7 +39,8 @@ public class SushiRestDbContext : DbContext
 			.WithOne(o => o.Owner);
 
 		modelBuilder.Entity<Order>()
-			.HasMany(o => o.Products);
+			.HasMany(o => o.OrderItems)
+			.WithOne(o => o.Order);
 		modelBuilder.Entity<Order>()
 			.HasOne(o => o.Promo);
 		modelBuilder.Entity<Order>()

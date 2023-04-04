@@ -66,7 +66,7 @@ public class ProductsController : ControllerBase
 	
 	//[HttpDelete("{id:int}", Name = "DeleteBookById")]
 	[HttpGet(Name = "Get all products")]
-	[ProducesResponseType(200, Type = typeof(IEnumerable<Product>))]
+	[ProducesResponseType(200, Type = typeof(IEnumerable<ProductMenuDto>))]
 	[ProducesResponseType(500, Type = typeof(string))]
 	public async Task<IActionResult> Get(int? limit, int page = 1)
 	{
@@ -76,9 +76,6 @@ public class ProductsController : ControllerBase
 			var fetchedProducts = await _repository.GetProductsAsync(limit, page);
 			var mappedProducts = _mapper
 				.Map<List<Product>,List<ProductMenuDto>>(fetchedProducts.ToList());
-			_logger.Log(LogLevel.Information,$"Returned {limit} products on {page} page from database.");
-			//var ownersResult = _mapper.Map<IEnumerable<OwnerDto>>(owners);
-			//return Ok(ownersResult); 
 			return Ok(mappedProducts);
 		}
 		catch (Exception ex) 
