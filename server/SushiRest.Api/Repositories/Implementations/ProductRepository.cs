@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SushiRest.Api.Contexts;
 using SushiRest.Api.Entities;
+using SushiRest.Api.Repositories.Services;
 
-namespace SushiRest.Api.Repositories;
+namespace SushiRest.Api.Repositories.Implementations;
 
 public class ProductRepository : IProductRepository
 {

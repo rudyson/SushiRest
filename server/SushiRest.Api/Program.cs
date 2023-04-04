@@ -5,7 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SushiRest.Api.Contexts;
-using SushiRest.Api.Repositories;
+using SushiRest.Api.Repositories.Implementations;
+using SushiRest.Api.Repositories.Services;
 using SushiRest.Api.Tools;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -86,6 +87,7 @@ builder.Services.AddControllers().AddJsonOptions(
 
 // Repository registration in builder
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 #endregion
 
