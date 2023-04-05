@@ -8,4 +8,5 @@ public class ProductMenuDto : EntityDto
 	public decimal? Rating { get; set; }
 	public int Pieces { get; set; }
 	public decimal Weight { get; set; }
+	public decimal Price { get; set; }
 }

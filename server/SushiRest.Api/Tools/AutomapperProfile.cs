@@ -48,6 +48,11 @@ public class AutomapperProfile : Profile
 				dest => dest.Weight,
 				opt => opt
 					.MapFrom(src => src.Weight)
+			)
+			.ForMember(
+				dest => dest.Price,
+				opt => opt
+					.MapFrom(src => src.Price)
 			);
 
 		#endregion
