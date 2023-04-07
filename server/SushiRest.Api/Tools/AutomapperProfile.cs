@@ -43,57 +43,11 @@ public class AutomapperProfile : Profile
 				opt => opt
 					.MapFrom(src => src.DefaultThumbnail)
 			);
-		/*
-		CreateMap<Product, ProductMenuDto>()
-			.ForMember(
-				dest => dest.Id,
-				opt => opt
-					.MapFrom(src => src.Id)
-			)
-			.ForMember(
-				dest => dest.Title,
-				opt => opt
-					.MapFrom(src => src.Title)
-			)
-			.ForMember(
-				dest => dest.Description,
-				opt => opt
-					.MapFrom(src => src.Description)
-			)
-			.ForMember(
-				dest => dest.Cover,
-				opt => opt
-					.MapFrom(src => src.DefaultThumbnail)
-			)
-			.ForMember(
-				dest => dest.Rating,
-				opt => opt
-					.MapFrom(src => src.Rates!
-						.Select(r => r.Value)
-						.DefaultIfEmpty(0)
-						.Average())
-			)
-			.ForMember(
-				dest => dest.Pieces,
-				opt => opt
-					.MapFrom(src => src.Pieces)
-			)
-			.ForMember(
-				dest => dest.Weight,
-				opt => opt
-					.MapFrom(src => src.Weight)
-			)
-			.ForMember(
-				dest => dest.Price,
-				opt => opt
-					.MapFrom(src => src.Price)
-			);
-		*/
 		#endregion
 
 		#region Category in menu
 
-		CreateMap<Category, CategoryDto>()
+		CreateMap<Category, CategoryDto>(MemberList.Destination)
 			.ForMember(
 				dest => dest.Id,
 				opt => opt
@@ -104,6 +58,27 @@ public class AutomapperProfile : Profile
 				opt => opt
 					.MapFrom(src => src.Name)
 			);
+
+		#endregion
+
+		#region Feedback (Review)
+
+		CreateMap<Review, FeedbackDto>(MemberList.Destination)
+			.ForMember(
+				dest => dest.FullName,
+				opt => opt
+					.MapFrom(src => $"{src.ReviewedBy!.FirstName} {src.ReviewedBy!.LastName}")
+			)/*
+			.ForMember(
+				dest => dest.Rating,
+				opt => opt
+					.MapFrom(src => src.Rate)
+			)
+			.ForMember(
+				dest => dest.Description,
+				opt => opt
+					.MapFrom(src => src.Description)
+			)*/;
 
 		#endregion
 	}

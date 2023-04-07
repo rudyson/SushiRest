@@ -88,6 +88,7 @@ builder.Services.AddControllers().AddJsonOptions(
 // Repository registration in builder
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
 
 #endregion
 

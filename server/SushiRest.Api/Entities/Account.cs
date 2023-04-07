@@ -11,6 +11,7 @@ public class Account : Entity
 	public string? FirstName  { get; set; }
 	
 	public string? LastName  { get; set; }
+	public string? Avatar  { get; set; }
 	
 	[DataType(DataType.PhoneNumber)]
 	public string? PhoneNumber  { get; set; }
