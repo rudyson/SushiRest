@@ -26,5 +26,10 @@ public interface IProductRepository
 	/// </summary>
 	/// <returns></returns>
 	public Task<IEnumerable<ProductMenuDto>> GetProductsAsync();
-	
+	/// <summary>
+	/// Returns recommended products list with pagination
+	/// </summary>
+	/// <param name="items">Show first <b>n</b> recommended products</param>
+	/// <returns></returns>
+	public Task<IEnumerable<ProductTopDto>> GetProductsRecommendedAsync(int? items);
 }

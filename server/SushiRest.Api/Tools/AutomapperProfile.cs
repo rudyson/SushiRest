@@ -8,8 +8,42 @@ public class AutomapperProfile : Profile
 {
 	public AutomapperProfile()
 	{
+		#region Product in top (recommendations)
+
+		CreateMap<Product, ProductTopDto>(MemberList.Destination)
+			.ForMember(
+				dest => dest.Rating,
+				opt => opt
+					.MapFrom(src => src.Rates!
+						.Select(r => r.Value)
+						.DefaultIfEmpty(0)
+						.Average())
+			)
+			.ForMember(
+				dest => dest.Cover,
+				opt => opt
+					.MapFrom(src => src.TopPosThumbnail)
+			);
+
+		#endregion
+		
 		#region Product in menu
 
+		CreateMap<Product, ProductMenuDto>(MemberList.Destination)
+			.ForMember(
+				dest => dest.Rating,
+				opt => opt
+					.MapFrom(src => src.Rates!
+						.Select(r => r.Value)
+						.DefaultIfEmpty(0)
+						.Average())
+			)
+			.ForMember(
+				dest => dest.Cover,
+				opt => opt
+					.MapFrom(src => src.DefaultThumbnail)
+			);
+		/*
 		CreateMap<Product, ProductMenuDto>()
 			.ForMember(
 				dest => dest.Id,
@@ -54,7 +88,7 @@ public class AutomapperProfile : Profile
 				opt => opt
 					.MapFrom(src => src.Price)
 			);
-
+		*/
 		#endregion
 
 		#region Category in menu

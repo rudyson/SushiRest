@@ -90,4 +90,24 @@ public class ProductRepository : IProductRepository
 		
 		return productsMapped;
 	}
+
+	public async Task<IEnumerable<ProductTopDto>> GetProductsRecommendedAsync(int? items)
+	{
+		// Fetching
+		var productsFetched = await _context.Products!
+			.ToListAsync();
+		
+		// Mapping
+		var productsMapped = _mapper.Map<List<Product>,List<ProductTopDto>>(productsFetched.ToList());
+		
+		// Ordering
+
+		var productsSorted = productsMapped.OrderByDescending(p => p.Rating);
+		
+		// Taking
+
+		var result = items.HasValue ? productsSorted.Take(items.Value) : productsSorted;
+		
+		return result;
+	}
 }

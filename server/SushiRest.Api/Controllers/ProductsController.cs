@@ -48,4 +48,21 @@ public class ProductsController : ControllerBase
 			return StatusCode(500, "Internal server error"); 
 		} 
 	}
+	[HttpGet("recommended",Name = "Get recommended products")]
+	[ProducesResponseType(200, Type = typeof(IEnumerable<ProductTopDto>))]
+	[ProducesResponseType(500, Type = typeof(string))]
+	public async Task<IActionResult> Get(
+		int? items)
+	{
+		try
+		{
+			var products = await _repository.GetProductsRecommendedAsync(items);
+			return products.IsNullOrEmpty() ? NotFound() : Ok(products);
+		}
+		catch (Exception ex) 
+		{ 
+			_logger.LogError($"Something went wrong inside Get action: {ex.Message}"); 
+			return StatusCode(500, "Internal server error"); 
+		} 
+	}
 }
