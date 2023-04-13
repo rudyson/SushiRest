@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using SushiRest.Api.Entities.Identity;
 
 namespace SushiRest.Api.Entities;
 
@@ -26,7 +27,7 @@ public class Payment : Entity
 	
 	#region EF Relations
 	
-	public Account? Owner { get; set; }
+	public ApplicationUser? Owner { get; set; }
 	
 	#endregion
 }

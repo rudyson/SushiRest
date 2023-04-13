@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
+using SushiRest.Api.Entities.Identity;
 
 namespace SushiRest.Api.Entities;
 
@@ -17,7 +18,7 @@ public class Review : Entity
 	#region EF Relations
 
 	[Required]
-  public Account? ReviewedBy { get; set; }
+  public ApplicationUser? ReviewedBy { get; set; }
 
 	#endregion
 	

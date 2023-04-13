@@ -1,4 +1,4 @@
-﻿namespace sushirestapi.Tools;
+﻿namespace SushiRest.Api.Tools;
 
 public class JsonWebTokenOptions
 {

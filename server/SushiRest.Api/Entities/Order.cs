@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using SushiRest.Api.Entities.Identity;
 
 namespace SushiRest.Api.Entities;
 /// <summary>
@@ -26,7 +27,7 @@ public class Order : Entity
   
 	public ICollection<OrderItem>? OrderItems { get; set; }
 	
-	public Account? Owner { get; set; }
+	public ApplicationUser? Owner { get; set; }
 	
 	#endregion
 }

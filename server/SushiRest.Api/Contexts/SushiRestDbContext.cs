@@ -1,19 +1,30 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SushiRest.Api.Entities;
+using SushiRest.Api.Entities.Identity;
 
 namespace SushiRest.Api.Contexts;
 
-public class SushiRestDbContext : DbContext
+public class SushiRestDbContext : IdentityDbContext<ApplicationUser>
 {
 	public SushiRestDbContext(DbContextOptions<SushiRestDbContext> options): base (options)
 	{
 		
 	}
 
+	#region Migration builder tutorial
+
+	/*
+	 * dotnet ef migrations add MigrationName --context SushiRestDbContext
+	 * dotnet ef database update --context SushiRestDbContext
+	 */
+
+	#endregion
+	
 	#region Members
 
 	public DbSet<About>? Abouts { get; set; }
-	public DbSet<Account>? Accounts { get; set; }
+	public DbSet<ApplicationUser>? Accounts { get; set; }
 	public DbSet<Delivery>? Deliveries { get; set; }
 	public DbSet<Order>? Orders { get; set; }
 	public DbSet<Payment>? Payments { get; set; }
@@ -28,13 +39,15 @@ public class SushiRestDbContext : DbContext
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
-		modelBuilder.Entity<Account>()
+		base.OnModelCreating(modelBuilder);
+		
+		modelBuilder.Entity<ApplicationUser>()
 			.HasMany(a => a.Deliveries)
 			.WithOne(d => d.Owner);
-		modelBuilder.Entity<Account>()
+		modelBuilder.Entity<ApplicationUser>()
 			.HasMany(a => a.Payments)
 			.WithOne(p => p.Owner);
-		modelBuilder.Entity<Account>()
+		modelBuilder.Entity<ApplicationUser>()
 			.HasMany(a => a.Orders)
 			.WithOne(o => o.Owner);
 

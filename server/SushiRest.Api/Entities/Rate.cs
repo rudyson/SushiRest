@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
+using SushiRest.Api.Entities.Identity;
 
 namespace SushiRest.Api.Entities;
 
@@ -13,7 +14,7 @@ public class Rate : Entity
 	#region EF Relations
 
 	[Required]
-  public Account? RatedBy { get; set; }
+  public ApplicationUser? RatedBy { get; set; }
   public Product? Product { get; set; }
 
 	#endregion

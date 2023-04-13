@@ -1,27 +1,31 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
-namespace SushiRest.Api.Entities;
+namespace SushiRest.Api.Entities.Identity;
 /// <summary>
 /// User account with preferences
 /// </summary>
-public class Account : Entity
+public class ApplicationUser : IdentityUser
 {
 	#region Properties
-
+	[Required]
 	public string? FirstName  { get; set; }
 	
 	public string? LastName  { get; set; }
 	public string? Avatar  { get; set; }
-	
+	/*
+	[Required]
 	[DataType(DataType.PhoneNumber)]
 	public string? PhoneNumber  { get; set; }
 	
+	[Required]
 	[DataType(DataType.EmailAddress)]
 	public string? Email  { get; set; }
 	
+	[Required]
 	[DataType(DataType.Password)]
 	public string? Password  { get; set; } // [HASH SHA256]
-
+*/
 	#endregion
 	
 	#region EF Relations

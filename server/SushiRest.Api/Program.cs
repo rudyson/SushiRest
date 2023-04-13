@@ -1,10 +1,13 @@
 using System.Text;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SushiRest.Api.Contexts;
+using SushiRest.Api.Entities;
+using SushiRest.Api.Entities.Identity;
 using SushiRest.Api.Repositories.Implementations;
 using SushiRest.Api.Repositories.Services;
 using SushiRest.Api.Tools;
@@ -14,7 +17,55 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-/*
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(options => {
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Sushi Rest API",
+        Version = "v1",
+        Description = "An API to to interact with the restaurant",
+        //TermsOfService = new Uri("https://example.com/terms"),
+        Contact = new OpenApiContact
+        {
+            Name = "Ruslan Diadiushkin",
+            Email = "contact@xnrudyson.anonaddy.me",
+            Url = new Uri("https://www.linkedin.com/in/rudyson")
+        },
+        License = new OpenApiLicense
+        {
+            Name = "Sushi Rest API MIT License",
+            Url = new Uri("https://github.com/rudyson/SushiRest/blob/master/LICENSE")
+        }
+    });
+});
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
+// Database connection string and provider
+builder.Services.AddDbContext<SushiRestDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+});
+
+#region AspNet Identity
+
+builder.Services.AddIdentity<ApplicationUser,ApplicationRole>()
+    .AddEntityFrameworkStores<SushiRestDbContext>()
+    .AddDefaultTokenProviders();
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = true;
+    options.Password.RequiredLength = 8;
+    
+    options.User.RequireUniqueEmail = true;
+
+});
+
+#endregion
+
 #region JWT Configuration
 
 builder.Services.Configure<JsonWebTokenOptions>(builder.Configuration.GetSection("JsonWebToken"));
@@ -39,39 +90,16 @@ builder.Services.AddAuthentication(options =>
             ValidAudience = audience,
             ValidateLifetime = true,
             IssuerSigningKey = signingKey,
-            ValidateIssuerSigningKey = true
+            ValidateIssuerSigningKey = true,
+            RequireExpirationTime = true
         };
     });
 
+builder.Services.AddScoped<IUserService, UserService>();
+
 #endregion
-*/
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options => {
-    options.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "Sushi Rest API",
-        Version = "v1",
-        Description = "An API to to interact with the restaurant",
-        //TermsOfService = new Uri("https://example.com/terms"),
-        Contact = new OpenApiContact
-        {
-            Name = "Ruslan Diadiushkin",
-            Email = "contact@xnrudyson.anonaddy.me",
-            Url = new Uri("https://www.linkedin.com/in/rudyson"),
-        },
-        License = new OpenApiLicense
-        {
-            Name = "Sushi Rest API MIT License",
-            Url = new Uri("https://github.com/rudyson/SushiRest/blob/master/LICENSE"),
-        }
-    });
-});
-builder.Services.AddRouting(options => options.LowercaseUrls = true);
-builder.Services.AddDbContext<SushiRestDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
-});
+
+// Context seeding
 builder.Services.AddTransient<DatabaseContextSeeding>();
 
 #region System.Text.Json => options
@@ -122,8 +150,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 
-//app.UseAuthentication();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
