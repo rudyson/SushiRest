@@ -23,8 +23,8 @@ public class AccountController : ControllerBase
 
 	[AllowAnonymous]
 	[HttpPost("Register", Name = "Register new account")]
-	[ProducesResponseType(200, Type = typeof(UserManagerResponseDto))]
-	[ProducesResponseType(400, Type = typeof(string))]
+	[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserManagerResponseDto))]
+	[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
 	public async Task<IActionResult> RegisterAsync([FromBody] RegistrationDto credentials)
 	{
 		if (!ModelState.IsValid) return BadRequest("Wrong properties in provided data");
@@ -34,8 +34,8 @@ public class AccountController : ControllerBase
 	}
 	[AllowAnonymous]
 	[HttpPost("Login", Name = "Login into account")]
-	[ProducesResponseType(200, Type = typeof(UserManagerResponseDto))]
-	[ProducesResponseType(400, Type = typeof(string))]
+	[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserManagerResponseDto))]
+	[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
 	public async Task<IActionResult> LoginAsync([FromBody] LoginDto credentials)
 	{
 		if (!ModelState.IsValid) return BadRequest("Wrong properties in provided data");
@@ -46,9 +46,9 @@ public class AccountController : ControllerBase
 	
 	[Authorize]
 	[HttpGet("Test", Name = "Test auth")]
-	[ProducesResponseType(200, Type = typeof(Claim))]
-	[ProducesResponseType(400, Type = typeof(Claim))]
-	[ProducesResponseType(401, Type = typeof(Claim))]
+	[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Claim))]
+	[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Claim))]
+	[ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(Claim))]
 	public IActionResult Demo()
 	{
 		var userId = User.FindFirst(ClaimTypes.NameIdentifier);

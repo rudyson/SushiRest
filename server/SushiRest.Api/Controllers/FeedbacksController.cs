@@ -20,9 +20,9 @@ public class FeedbacksController : ControllerBase
 		_repository = repository;
 	}
 	[HttpGet(Name = "Get feedbacks")]
-	[ProducesResponseType(200, Type = typeof(IEnumerable<FeedbackDto>))]
-	[ProducesResponseType(404, Type = typeof(string))]
-	[ProducesResponseType(500, Type = typeof(string))]
+	[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<FeedbackDto>))]
+	[ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
+	[ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
 	public async Task<IActionResult> Get(int ? items)
 	{
 		try
@@ -33,7 +33,7 @@ public class FeedbacksController : ControllerBase
 		catch (Exception ex) 
 		{ 
 			_logger.LogError($"Something went wrong inside Get action: {ex.Message}"); 
-			return StatusCode(500, "Internal server error"); 
+			return StatusCode(StatusCodes.Status500InternalServerError, ex.Message); 
 		} 
 	}
 }

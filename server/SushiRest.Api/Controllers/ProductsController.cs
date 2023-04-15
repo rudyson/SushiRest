@@ -28,8 +28,9 @@ public class ProductsController : ControllerBase
 		_repository = repository;
 	}
 	[HttpGet(Name = "Get all products")]
-	[ProducesResponseType(200, Type = typeof(IEnumerable<ProductMenuDto>))]
-	[ProducesResponseType(500, Type = typeof(string))]
+	[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProductMenuDto>))]
+	[ProducesResponseType(StatusCodes.Status404NotFound)]
+	[ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
 	public async Task<IActionResult> Get(
 		int? limit,
 		string? order,
@@ -45,12 +46,12 @@ public class ProductsController : ControllerBase
 		catch (Exception ex) 
 		{ 
 			_logger.LogError($"Something went wrong inside Get action: {ex.Message}"); 
-			return StatusCode(500, "Internal server error"); 
+			return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
 		} 
 	}
 	[HttpGet("recommended",Name = "Get recommended products")]
-	[ProducesResponseType(200, Type = typeof(IEnumerable<ProductTopDto>))]
-	[ProducesResponseType(500, Type = typeof(string))]
+	[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProductTopDto>))]
+	[ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
 	public async Task<IActionResult> Get(
 		int? items)
 	{
@@ -62,7 +63,7 @@ public class ProductsController : ControllerBase
 		catch (Exception ex) 
 		{ 
 			_logger.LogError($"Something went wrong inside Get action: {ex.Message}"); 
-			return StatusCode(500, "Internal server error"); 
+			return StatusCode(StatusCodes.Status500InternalServerError, ex.Message); 
 		} 
 	}
 }
