@@ -39,6 +39,27 @@ builder.Services.AddSwaggerGen(options => {
             Url = new Uri("https://github.com/rudyson/SushiRest/blob/master/LICENSE")
         }
     });
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme {
+        In = ParameterLocation.Header, 
+        Description = "Please insert JWT with Bearer into field",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "Bearer"
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement {
+        { 
+            new OpenApiSecurityScheme 
+            { 
+                Reference = new OpenApiReference 
+                { 
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer" 
+                } 
+            },
+            Array.Empty<string>()
+        } 
+    });
 });
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 // Database connection string and provider

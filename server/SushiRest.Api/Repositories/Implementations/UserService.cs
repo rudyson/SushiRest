@@ -82,20 +82,24 @@ public class UserService : IUserService
 			};
 		}
 
-		var claims = new[]
+		var claims = new Claim[]
 		{
-			new Claim("Email", credentials.Email!),
-			new Claim(ClaimTypes.NameIdentifier, user.Id)
+			new (ClaimTypes.Email, user.Email!),
+			new (ClaimTypes.Name, user.UserName!),
+			new (ClaimTypes.NameIdentifier, user.Id)
 		};
 
 		var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JsonWebToken:SecretKey"]!));
+		
+		var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 		
 		var token = new JwtSecurityToken(
 			issuer: _configuration["JsonWebToken:Issuer"],
 			audience: _configuration["JsonWebToken:Audience"],
 			claims: claims,
 			expires: DateTime.Now.AddDays(30),
-			signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256));
+			signingCredentials: signingCredentials
+			);
 
 		return new UserManagerResponseDto
 		{
