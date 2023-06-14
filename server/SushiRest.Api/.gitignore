@@ -347,3 +347,4 @@ fabric.properties
 
 # Dev env preferences
 appsettings.Development.json
+/Migrations/

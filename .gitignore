@@ -353,3 +353,5 @@ MigrationBackup/
 ### Rider files at backend
 server/global.json
 server/.idea/
+.idea
+.env
