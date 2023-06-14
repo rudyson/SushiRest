@@ -1,0 +1,56 @@
+version: '3.4'
+
+networks:
+  webapp:
+    driver: bridge
+    
+volumes:
+  postgres:
+    driver: local
+
+services:
+  aspnetwebapi:
+    container_name: SushiRest.Api
+    image: ${DOCKER_REGISTRY-}sushirestapi
+    env_file: .env
+    depends_on:
+      - postgresql
+    build:
+      context: .
+      dockerfile: server/SushiRest.Api/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+      - "8001:443"
+    volumes:
+      - ${USERPROFILE}/.aspnet/https:/https/
+    networks:
+      - webapp
+  postgresql:
+    container_name: SushiRest.Postgres
+    image: postgres:15
+    env_file: .env
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - webapp
+  nginx:
+    container_name: SushiRest.Nginx
+    image: nginx:1.17.10
+    env_file: .env
+    depends_on:
+      - aspnetwebapi
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./nginx/html/:/usr/share/nginx/html/
+      - ${USERPROFILE}/.aspnet/https:/etc/ssl/
+    networks:
+      - webapp
