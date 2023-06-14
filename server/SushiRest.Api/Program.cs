@@ -62,11 +62,26 @@ builder.Services.AddSwaggerGen(options => {
     });
 });
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
-// Database connection string and provider
+
+#region Database context service configuration
+
 builder.Services.AddDbContext<SushiRestDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+    var dbAddress = Environment.GetEnvironmentVariable("POSTGRES_DB") ?? "SushiRest";
+    var dbUser = Environment.GetEnvironmentVariable("POSTGRES_USER") ?? "admin";
+    var dbPassword = Environment.GetEnvironmentVariable("POSTGRES_PASSWORD") ?? "admin";
+    
+    var connectionString = $"Server=postgresql;" +
+                           $"Database={dbAddress};" +
+                           $"Port=5432;" +
+                           $"User Id={dbUser};" +
+                           $"Password={dbPassword};";
+    
+    options.UseNpgsql(connectionString);
+    // builder.Configuration.GetConnectionString("Default")
 });
+
+#endregion
 
 #region AspNet Identity
 
@@ -150,7 +165,39 @@ builder.Services.AddAutoMapper(
 
 #endregion
 
+#region CORS policies
+
+builder.Services.AddCors(
+    options =>
+    {
+        options.AddPolicy("AllowAll", p =>
+        {
+            p.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+    });
+
+#endregion
+
 var app = builder.Build();
+
+// CORS
+app.UseCors("AllowAll");
+
+#region EF Migrations
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<SushiRestDbContext>();
+    if (context.Database.GetPendingMigrations().Any())
+    {
+        context.Database.Migrate();
+    }
+}
+
+#endregion
 #region Seeding
 SeedDatabase(app);
 void SeedDatabase(IHost host)
@@ -170,7 +217,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseAuthentication();
