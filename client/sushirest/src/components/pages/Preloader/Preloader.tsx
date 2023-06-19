@@ -1,4 +1,4 @@
-import { Player} from "@lottiefiles/react-lottie-player";
+import {Player} from "@lottiefiles/react-lottie-player";
 const Preloader = () => {
     return (
         <div>
