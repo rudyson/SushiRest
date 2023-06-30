@@ -34,6 +34,7 @@ public class SushiRestDbContext : IdentityDbContext<ApplicationUser>
 	public DbSet<Review>? Reviews { get; set; }
 	public DbSet<Tag>? Tags { get; set; }
 	public DbSet<Category>? Categories { get; set; }
+	public DbSet<DbImage>? Images { get; set; }
 
 	#endregion
 
@@ -50,6 +51,11 @@ public class SushiRestDbContext : IdentityDbContext<ApplicationUser>
 		modelBuilder.Entity<ApplicationUser>()
 			.HasMany(a => a.Orders)
 			.WithOne(o => o.Owner);
+		modelBuilder.Entity<ApplicationUser>()
+			.HasOne(a => a.Avatar);
+		
+		modelBuilder.Entity<About>()
+			.HasOne(a => a.Cover);
 
 		modelBuilder.Entity<Order>()
 			.HasMany(o => o.OrderItems)
@@ -70,6 +76,10 @@ public class SushiRestDbContext : IdentityDbContext<ApplicationUser>
 		modelBuilder.Entity<Product>()
 			.HasOne(p => p.Category)
 			.WithMany(c => c.Products);
+		modelBuilder.Entity<Product>()
+			.HasOne(p => p.DefaultThumbnail);
+		modelBuilder.Entity<Product>()
+			.HasOne(p => p.TopPosThumbnail);
 		
 		modelBuilder.Entity<Rate>()
 			.HasOne(r=>r.RatedBy)

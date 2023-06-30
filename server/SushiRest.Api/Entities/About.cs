@@ -7,7 +7,7 @@ namespace SushiRest.Api.Entities;
 public class About : Entity
 {
 	[DataType(DataType.ImageUrl)]
-	public string? Cover { get; set; }
+	public DbImage? Cover { get; set; }
 	
 	[Required]
 	public string? Title { get; set; }

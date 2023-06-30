@@ -67,11 +67,12 @@ builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
 builder.Services.AddDbContext<SushiRestDbContext>(options =>
 {
+    var dbServer = Environment.GetEnvironmentVariable("POSTGRES_URI") ?? "localhost";
     var dbAddress = Environment.GetEnvironmentVariable("POSTGRES_DB") ?? "SushiRest";
     var dbUser = Environment.GetEnvironmentVariable("POSTGRES_USER") ?? "admin";
     var dbPassword = Environment.GetEnvironmentVariable("POSTGRES_PASSWORD") ?? "admin";
     
-    var connectionString = $"Server=postgresql;" +
+    var connectionString = $"Server={dbServer};" +
                            $"Database={dbAddress};" +
                            $"Port=5432;" +
                            $"User Id={dbUser};" +
@@ -153,6 +154,7 @@ builder.Services.AddControllers().AddJsonOptions(
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
+builder.Services.AddScoped<IImageRepository, ImageRepository>();
 
 #endregion
 
@@ -191,9 +193,16 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<SushiRestDbContext>();
-    if (context.Database.GetPendingMigrations().Any())
+    try
     {
-        context.Database.Migrate();
+        if (context.Database.GetPendingMigrations().Any())
+        {
+            context.Database.Migrate();
+        }
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e);
     }
 }
 

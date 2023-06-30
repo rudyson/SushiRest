@@ -4,15 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SushiRest.Api.Entities;
 /// <summary>
-/// Base product model for any position in restoraunt menu
+/// Base product model for any position in restaurant menu
 /// </summary>
 public class Product : Entity
 {
 	[Required]
 	public string? Title { get; set; }
-	// Thumbnails
-	public string? TopPosThumbnail { get; set; }
-	public string? DefaultThumbnail { get; set; }
 	// Parameters
 	[DefaultValue(1)]
 	public int Pieces { get; set; }
@@ -30,6 +27,9 @@ public class Product : Entity
 	public ICollection<Rate>? Rates { get; set; }
 	public ICollection<Tag>? Tags { get; set; }
 	public Category? Category { get; set; }
+	// Thumbnails
+	public DbImage? TopPosThumbnail { get; set; }
+	public DbImage? DefaultThumbnail { get; set; }
 
 	#endregion
 }

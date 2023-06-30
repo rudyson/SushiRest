@@ -348,3 +348,4 @@ fabric.properties
 # Dev env preferences
 appsettings.Development.json
 /Migrations/
+wwwroot/uploads/

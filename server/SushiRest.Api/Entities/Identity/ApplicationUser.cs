@@ -12,7 +12,6 @@ public class ApplicationUser : IdentityUser
 	public string? FirstName  { get; set; }
 	
 	public string? LastName  { get; set; }
-	public string? Avatar  { get; set; }
 	/*
 	[Required]
 	[DataType(DataType.PhoneNumber)]
@@ -38,6 +37,8 @@ public class ApplicationUser : IdentityUser
 	
 	public ICollection<Rate>? Rates { get; set; }
 	public ICollection<Review>? Reviews { get; set; }
+	
+	public DbImage? Avatar  { get; set; }
 
 	#endregion
 	
