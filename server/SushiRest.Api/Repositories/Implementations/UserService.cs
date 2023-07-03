@@ -81,13 +81,17 @@ public class UserService : IUserService
 				Message = "Wrong password specified"
 			};
 		}
-
-		var claims = new Claim[]
+		
+		var claims = new List<Claim>()
 		{
 			new (ClaimTypes.Email, user.Email!),
 			new (ClaimTypes.Name, user.UserName!),
 			new (ClaimTypes.NameIdentifier, user.Id)
 		};
+		
+		// Adding user's roles as JWT-claim
+		var roles = await _userManager.GetRolesAsync(user);
+		claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
 
 		var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JsonWebToken:SecretKey"]!));
 		
