@@ -30,14 +30,14 @@ public class UserService : IUserService
 		if (credentials.Equals(null))
 			return new UserManagerResponseDto
 			{
-				Sussessfull = false,
+				Successful = false,
 				Message = "Empty register model provided"
 			};
 		// User already exists
 		if (await _userManager.FindByEmailAsync(credentials.Email!)!=null)
 			return new UserManagerResponseDto
 			{
-				Sussessfull = false,
+				Successful = false,
 				Message = "User already exists"
 			};
 
@@ -51,7 +51,7 @@ public class UserService : IUserService
 		var result = await _userManager.CreateAsync(identityUser, credentials.Password!);
 		return new UserManagerResponseDto
 		{
-			Sussessfull = result.Succeeded,
+			Successful = result.Succeeded,
 			Message = result.Succeeded ? "User created" : "Something went wrong",
 			Errors = result.Errors.Select(e => e.Description)
 		};
@@ -67,7 +67,7 @@ public class UserService : IUserService
 		{
 			return new UserManagerResponseDto
 			{
-				Sussessfull = false,
+				Successful = false,
 				Message = "User not found"
 			};
 		}
@@ -77,7 +77,7 @@ public class UserService : IUserService
 		{
 			return new UserManagerResponseDto
 			{
-				Sussessfull = false,
+				Successful = false,
 				Message = "Wrong password specified"
 			};
 		}
@@ -108,7 +108,7 @@ public class UserService : IUserService
 		return new UserManagerResponseDto
 		{
 			Message = new JwtSecurityTokenHandler().WriteToken(token),
-			Sussessfull = true,
+			Successful = true,
 			ExpiresAtDate = token.ValidTo
 		};
 	}

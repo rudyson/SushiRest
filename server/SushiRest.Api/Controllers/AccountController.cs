@@ -30,7 +30,7 @@ public class AccountController : ControllerBase
 		if (!ModelState.IsValid) return BadRequest("Wrong properties in provided data");
 
 		var result = await _userService.RegisterUserAsync(credentials);
-		return result.Sussessfull ? Ok(result) : BadRequest(result);
+		return result.Successful ? Ok(result) : BadRequest(result);
 	}
 	[AllowAnonymous]
 	[HttpPost("Login", Name = "Login into account")]
@@ -41,7 +41,7 @@ public class AccountController : ControllerBase
 		if (!ModelState.IsValid) return BadRequest("Wrong properties in provided data");
 
 		var result = await _userService.LoginUserAsync(credentials);
-		return result.Sussessfull ? Ok(result) : BadRequest(result);
+		return result.Successful ? Ok(result) : BadRequest(result);
 	}
 	
 	[Authorize]
