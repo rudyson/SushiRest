@@ -30,7 +30,7 @@ namespace SushiRest.Api.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(DbImage))]
         [ProducesResponseType(StatusCodes.Status413RequestEntityTooLarge, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(BadRequestResult))]
         public async Task<IActionResult> UploadImage(
             [FromForm] FileToUpload file
         )
@@ -56,8 +56,8 @@ namespace SushiRest.Api.Controllers
         /// <returns></returns>
         [HttpGet("{name}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(FileContentResult))]
-        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(BadRequestResult))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(NotFoundResult))]
         public async Task<IActionResult> GetImageByName(
             string name
         )
@@ -83,8 +83,8 @@ namespace SushiRest.Api.Controllers
         /// <returns></returns>
         [HttpGet("{guid:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(FileContentResult))]
-        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(string))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(BadRequestResult))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(NotFoundResult))]
         public async Task<IActionResult> GetImageByGuid(
             Guid guid
         )
@@ -96,6 +96,57 @@ namespace SushiRest.Api.Controllers
                 var image = await _repository.LoadImageAsync(dbImage)!;
                 if (image == null) return NotFound();
                 return File(image, $"image/{dbImage.Extension}");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        /// <summary>
+        /// Removes image from Web API by its GUID
+        /// </summary>
+        /// <param name="guid">GUID of the image</param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpDelete("{guid:guid}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OkResult))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(BadRequestResult))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(NotFoundResult))]
+        public async Task<IActionResult> DeleteImageByGuid(
+            Guid guid
+        )
+        {
+            try
+            {
+                if (await _repository.DeleteImageAsync(guid))
+                    return Ok();
+                return NotFound();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Removes image from Web API by its name
+        /// </summary>
+        /// <param name="name">Name of the image</param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpDelete("{name}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OkResult))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(BadRequestResult))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(NotFoundResult))]
+        public async Task<IActionResult> DeleteImageByName(
+            string name
+        )
+        {
+            try
+            {
+                if (await _repository.DeleteImageAsync(name))
+                    return Ok();
+                return NotFound();
             }
             catch (Exception e)
             {

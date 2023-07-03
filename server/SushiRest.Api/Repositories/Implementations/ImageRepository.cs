@@ -79,4 +79,29 @@ public class ImageRepository : IImageRepository
         var imageBytes = await File.ReadAllBytesAsync(fileGetPath);
         return imageBytes;
     }
+
+    public async Task<bool> DeleteImageAsync(Guid imageId)
+    {
+        var image = await _context.Images!.SingleOrDefaultAsync(i => i.Id == imageId);
+        var fileGetPath = Path.Combine(_uploadsPath, image.Name);
+        if (_uploadsPath == null || image==null || !File.Exists(fileGetPath))
+            return false;
+        File.Delete(fileGetPath);
+        _context.Images.Remove(image);
+        await _context.SaveChangesAsync();
+        return true;
+    }
+
+    public async Task<bool> DeleteImageAsync(string imageName)
+    {
+        var id = Guid.Parse(Path.GetFileNameWithoutExtension(imageName));
+        var image = await _context.Images!.SingleOrDefaultAsync(i => i.Id == id);
+        if (image == null) return false;
+        if (image.Name != imageName) return false;
+        var fileGetPath = Path.Combine(_uploadsPath, image.Name);
+        File.Delete(fileGetPath);
+        _context.Images.Remove(image);
+        await _context.SaveChangesAsync();
+        return true;
+    }
 }

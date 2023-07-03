@@ -9,4 +9,6 @@ public interface IImageRepository
     public Task<DbImage?> GetImageAsync(Guid imageId);
     public Task<DbImage?> GetImageAsync(string imageName);
     public Task<byte[]?>? LoadImageAsync(DbImage image);
+    public Task<bool> DeleteImageAsync(Guid imageId);
+    public Task<bool> DeleteImageAsync(string imageName);
 }
