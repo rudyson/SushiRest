@@ -1,0 +1,17 @@
+%icons {
+    width: 1.875vw;
+    height: 1.875vw;
+}
+
+.cartIcon{
+    margin-left: 3.28125vw;
+    margin-top: 3.125vw;
+
+    @extend %icons
+}
+.profileIcon{
+    margin-left: 13.8020833333vw;
+    margin-top: 3.125vw;
+
+    @extend %icons
+}

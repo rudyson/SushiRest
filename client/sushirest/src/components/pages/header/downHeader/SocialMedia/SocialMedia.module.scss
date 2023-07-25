@@ -1,0 +1,25 @@
+%social {
+  width: 1.51041666667vw;
+  height: 1.51041666667vw;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 6.61458333333vw;
+}
+
+.socialLink {
+  margin-top: 4.6875vw;
+
+  &:first-child {
+    margin-top: 13.8541666667vw;
+  }
+
+  @extend %social;
+
+  img {
+    @extend %social
+  }
+}
