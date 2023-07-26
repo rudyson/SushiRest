@@ -10,3 +10,6 @@ export * from "./components/pages/header/downHeader/SocialMedia/SocialMedia.tsx"
 export * from "./components/pages/header/downHeader/MainPicHeader/MainPicHeader.tsx"
 
 //footer
+export * from "./components/pages/footer/NavigateFooter/NavigateFooter.tsx"
+export * from "./components/pages/footer/LeftFooter/LeftFooter.tsx"
+export * from "./components/pages/footer/LeftFooter/FooterLinks/FooterLinks.tsx"

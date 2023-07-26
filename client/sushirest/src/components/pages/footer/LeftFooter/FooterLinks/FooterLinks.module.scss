@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+
+  a {
+    width: 1.51041666667vw;
+    height: 1.51041666667vw;
+
+    margin-top: 2.60416666667vw;
+    margin-left: 2.08333333333vw;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    img {
+      width: 1.51041666667vw;
+      height: 1.51041666667vw;
+    }
+  }
+}
+

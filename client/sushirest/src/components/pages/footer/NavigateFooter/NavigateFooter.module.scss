@@ -1,0 +1,25 @@
+.menuWrapper {
+    display: flex;
+    flex-direction: row;
+    Link {
+        margin-top: 3.125vw;
+        margin-left: 6.25vw;
+
+        height: 1.51041666667vw;
+
+        font-family: NotoSansRegular;
+        font-weight: 400;
+        font-size: 1.04166666667vw;
+        line-height: 1.51041666667vw;
+
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        color: #F5F5F5;
+
+        &:first-child{
+            margin-left: 14.59375vw;
+        }
+    }
+}
