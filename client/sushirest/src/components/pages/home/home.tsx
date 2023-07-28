@@ -1,7 +1,10 @@
+import {Delivery, AboutUs} from "../../../index.ts"
+
 const Home = () => {
     return (
         <>
-            <p>HI</p>
+            <Delivery/>
+            <AboutUs/>
         </>
     );
 }

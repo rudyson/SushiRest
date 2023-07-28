@@ -1,4 +1,4 @@
-import style from "./FooterLinks.module.scss"
+import style from "./footerLinks.module.scss"
 import footerInsta from "../../../../../pics/FooterSocialPics/instaFooter.png";
 import footerTelegram from "../../../../../pics/FooterSocialPics/telegramFooter.png";
 import footerTwitter from "../../../../../pics/FooterSocialPics/twitterFooter.png";

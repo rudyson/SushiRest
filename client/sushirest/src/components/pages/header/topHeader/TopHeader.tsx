@@ -1,4 +1,4 @@
-import style from "./TopHeader.module.scss"
+import style from "./topHeader.module.scss"
 import {Menu, HeaderButtons} from "../../../../index.ts";
 export const TopHeader = () => {
     return (

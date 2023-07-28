@@ -1,6 +1,6 @@
 import {TopHeader, DownHeader} from "../../../index.ts";
 import headerBack from "../../../pics/headerPic/HeaderBack.png"
-import style from "./Header.module.scss"
+import style from "./header.module.scss"
 
 const Header = () => {
     return (

@@ -1,4 +1,4 @@
-import style from "./SocialMedia.module.scss"
+import style from "./socialMedia.module.scss"
 import insta from "../../../../../pics/HeaderSocialPics/insta.png"
 import telegram from "../../../../../pics/HeaderSocialPics/telegram.png"
 import twitter from "../../../../../pics/HeaderSocialPics/twitter.png"

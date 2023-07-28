@@ -1,4 +1,4 @@
-import style from "./HeaderMainButton.module.scss"
+import style from "./headerMainButton.module.scss"
 import {Link} from "react-router-dom";
 
 export const HeaderMainButton = () => {

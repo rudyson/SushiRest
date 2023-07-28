@@ -1,4 +1,4 @@
-import style from "./Buttons.module.scss"
+import style from "./buttons.module.scss"
 import Cart from "../../../../../pics/headerPic/Cart.png"
 import ProfileIcon from "../../../../../pics/headerPic/UserCircle.png"
 export const HeaderButtons = () => {

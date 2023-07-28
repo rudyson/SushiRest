@@ -1,4 +1,4 @@
-import style from "./MainPicHeader.module.scss"
+import style from "./mainPicHeader.module.scss"
 import MainPic from "../../../../../pics/headerPic/BannerPic.png"
 
 export const MainPicHeader = () => {

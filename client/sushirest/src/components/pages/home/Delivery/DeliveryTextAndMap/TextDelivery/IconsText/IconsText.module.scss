@@ -1,0 +1,63 @@
+%text{
+    height: 1.51041666667vw;
+
+    font-family: NotoSansRegular;
+    font-weight: 400;
+    font-size: 1.04166666667vw;
+    line-height: 1.51041666667vw;
+    text-decoration: none;
+
+    letter-spacing: 0.04em;
+
+    color: #2E2E2E;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.iconsWrapper {
+    display: flex;
+    flex-direction: column;
+
+    img {
+        margin-top: 2.20958333333vw;
+        width: 1.875vw;
+        height: 1.875vw;
+
+        &:first-child{
+            margin-top: 2.3vw;
+        }
+    }
+}
+.contactWrapper{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.52083333333vw;
+}
+
+.firstText{
+    margin-top: 2.45vw;
+    width: 12.5479166667vw;
+
+    @extend %text
+}
+.secondText{
+    margin-top: 2.50375vw;
+    width: 15.8125vw;
+
+    @extend %text
+}
+.thirdText{
+    margin-top: 2.54791666667vw;
+    width: 8.45vw;
+
+    @extend %text
+}
+.fourthText{
+    margin-top: 2.61791666667vw;
+    width: 15vw;
+
+    @extend %text
+}

@@ -1,4 +1,4 @@
-import style from "./LeftFooter.module.scss"
+import style from "./leftFooter.module.scss"
 import {FooterLinks} from "../../../../index.ts";
 
 export const LeftFooter = () => {

@@ -1,0 +1,69 @@
+.wrapper {
+  margin-top: 4.16666666667vw;
+  margin-bottom: 10.4166666667vw;
+  margin-left: 10vw;
+  width: 85vw;
+  height: 42.9791666667vw;
+  left: 0;
+}
+
+:global(.swiper-pagination-bullet) {
+
+  width: 0.7vw !important;
+  height: 0.7vw !important;
+
+  background: transparent !important;
+  border: solid 0.10416666666vw #D85A47 !important;
+  opacity: 1 !important;
+
+  margin-left: 1vw !important;
+}
+
+:global(.swiper-pagination-bullet-active) {
+  background: #D85A47 !important;
+}
+
+.el {
+  width: 70.1666666667vw;
+  height: 36.9791666667vw;
+
+  div {
+    box-shadow: 0.5vw 1vw 0.5vw 0vw #00000040;
+    display: flex;
+    flex-direction: row;
+
+    img {
+      width: 39.53125vw;
+      height: 36.9791666667vw;
+    }
+
+    section {
+      margin-left: 2.08333333333vw;
+        margin-top: 2.08333333333vw;
+      display: flex;
+      flex-direction: column;
+
+      color: #2E2E2E;
+
+
+      h3 {
+        font-family: NotoSansMedium;
+        font-size: 1.25vw;
+        line-height: 1.82291666667vw;
+        letter-spacing: 0.08em;
+        text-align: left;
+        text-transform: uppercase;
+      }
+
+      article {
+        margin-top: 2vw;
+
+        font-family: NotoSansRegular;
+        font-size: 1.04166666667vw;
+        line-height: 1.51041666667vw;
+        letter-spacing: 0.04em;
+        text-align: left;
+      }
+    }
+  }
+}

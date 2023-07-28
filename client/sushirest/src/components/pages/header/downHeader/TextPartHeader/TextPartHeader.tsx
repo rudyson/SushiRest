@@ -1,4 +1,4 @@
-import style from "./TextPartHeader.module.scss"
+import style from "./textPartHeader.module.scss"
 import logo from "../../../../../pics/headerPic/logo.png"
 import {HeaderMainButton} from "../../../../../index.ts";
 export const TextPartHeader = () => {
