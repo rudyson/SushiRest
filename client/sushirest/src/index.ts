@@ -15,6 +15,12 @@ export * from "./components/pages/footer/LeftFooter/leftFooter.tsx"
 export * from "./components/pages/footer/LeftFooter/FooterLinks/footerLinks.tsx"
 
 //-----------------------------Home
+//Star Component
+export * from "./components/pages/home/rating/rating.tsx"
+//Top Positions
+export * from "./components/pages/home/topPositions/topPositions.tsx"
+export * from "./components/pages/home/topPositions/topPositionSlider/topPositionSlider.tsx"
+export * from "./components/pages/home/topPositions/topPositionSlider/topPosSlide/topPosSlide.tsx"
 //Delivery
 export * from "./components/pages/home/Delivery/delivery.tsx"
 export * from "./components/pages/home/Delivery/DeliveryTextAndMap/deliveryTextMap.tsx"

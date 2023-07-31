@@ -1,7 +1,7 @@
 import style from "./aboutUsSlider.module.scss"
 
 // import Swiper core and required modules
-import {Navigation, Pagination, A11y, Autoplay} from 'swiper/modules';
+import {Navigation, Pagination, A11y} from 'swiper/modules';
 import {Swiper, SwiperSlide} from 'swiper/react';
 
 // Import Swiper styles
@@ -26,8 +26,7 @@ export const AboutUsSlider = () => {
                 slidesPerView={1.05}
                 pagination={{clickable: true}}
                 scrollbar={{draggable: true}}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
+
         >
             <SwiperSlide className={style.el}>
                 <div>

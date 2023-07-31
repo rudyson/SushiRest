@@ -1,8 +1,9 @@
-import {Delivery, AboutUs} from "../../../index.ts"
+import {Delivery, AboutUs, TopPositions} from "../../../index.ts"
 
 const Home = () => {
     return (
         <>
+            <TopPositions/>
             <Delivery/>
             <AboutUs/>
         </>

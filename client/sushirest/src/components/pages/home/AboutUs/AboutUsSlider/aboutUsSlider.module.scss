@@ -4,24 +4,29 @@
   margin-left: 10vw;
   width: 85vw;
   height: 42.9791666667vw;
-  left: 0;
+
+  :global(.swiper-pagination-bullet) {
+
+    width: 0.7vw !important;
+    height: 0.7vw !important;
+
+    background: transparent !important;
+    border: solid 0.10416666666vw #D85A47 !important;
+    opacity: 1 !important;
+
+    margin-left: 1vw !important;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    background: #D85A47 !important;
+  }
 }
 
-:global(.swiper-pagination-bullet) {
-
-  width: 0.7vw !important;
-  height: 0.7vw !important;
-
-  background: transparent !important;
-  border: solid 0.10416666666vw #D85A47 !important;
-  opacity: 1 !important;
-
-  margin-left: 1vw !important;
+:global(.swiper) {
+  margin-left: 0 !important;
 }
 
-:global(.swiper-pagination-bullet-active) {
-  background: #D85A47 !important;
-}
+
 
 .el {
   width: 70.1666666667vw;
