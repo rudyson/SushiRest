@@ -1,5 +1,5 @@
 import style from "./topPosSlide.module.scss"
-import topSushiBack from "../../../../../../pics/topSushi/topSushiBack.png";
+import topSushiBack from "../../../../../../pics/home/topPositions/topSushiBack.png";
 import {Rating} from "../../../../../../index.ts";
 export const TopPosSlide= ({...obj}) => {
     return (

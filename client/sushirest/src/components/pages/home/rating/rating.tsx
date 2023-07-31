@@ -1,5 +1,4 @@
 import '../../../../App.css'
-
 import {IoStarSharp} from "react-icons/io5";
 import {useState} from "react";
 

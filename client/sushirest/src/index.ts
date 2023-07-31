@@ -21,6 +21,10 @@ export * from "./components/pages/home/rating/rating.tsx"
 export * from "./components/pages/home/topPositions/topPositions.tsx"
 export * from "./components/pages/home/topPositions/topPositionSlider/topPositionSlider.tsx"
 export * from "./components/pages/home/topPositions/topPositionSlider/topPosSlide/topPosSlide.tsx"
+//Feedbacks
+export * from "./components/pages/home/feedbacks/feedbacks.tsx"
+export * from "./components/pages/home/feedbacks/feedbackSlider/feedbacksSlider.tsx"
+export * from "./components/pages/home/feedbacks/feedbackSlider/feedbackSlide/feedbackSlide.tsx"
 //Delivery
 export * from "./components/pages/home/Delivery/delivery.tsx"
 export * from "./components/pages/home/Delivery/DeliveryTextAndMap/deliveryTextMap.tsx"

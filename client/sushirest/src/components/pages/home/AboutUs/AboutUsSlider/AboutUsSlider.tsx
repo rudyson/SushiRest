@@ -12,10 +12,10 @@ import 'swiper/scss/effect-coverflow'
 
 
 
-import firstPic from "../../../../../pics/sliderPic/firstSlider.png"
-import secondPic from "../../../../../pics/sliderPic/secondSlider.png"
-import thirdPic from "../../../../../pics/sliderPic/thirdSlider.png"
-import fourthPic from "../../../../../pics/sliderPic/fourthSlider.png"
+import firstPic from "../../../../../pics/home/sliderAboutPic/firstSlider.png"
+import secondPic from "../../../../../pics/home/sliderAboutPic/secondSlider.png"
+import thirdPic from "../../../../../pics/home/sliderAboutPic/thirdSlider.png"
+import fourthPic from "../../../../../pics/home/sliderAboutPic/fourthSlider.png"
 
 export const AboutUsSlider = () => {
     return (
