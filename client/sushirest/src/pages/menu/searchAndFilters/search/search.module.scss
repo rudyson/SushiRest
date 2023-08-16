@@ -1,0 +1,54 @@
+.wrapper {
+  display: flex;
+}
+
+.loupe {
+  margin-top: 0.9vw;
+  margin-left: 1vw;
+
+  position: absolute;
+  width: 1.875vw;
+  height: 1.875vw;
+}
+
+.closeIcon {
+  margin-left: 19vw;
+  margin-top: 1.2vw;
+
+  width: 1.4vw;
+  height: 1.4vw;
+
+  opacity: 0.6;
+
+  position: absolute;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.inputField {
+  width: 18vw;
+  height: 3.75vw;
+
+  box-shadow: 0.52083333333vw 0.78125vw 1.71875vw 0px #00000040;
+  border: none;
+  border-radius: 0.52083333333vw;
+
+  padding-left: 3.5vw;
+
+  font-family: NotoSansRegular;
+  font-size: 0.83333333333vw;
+  line-height: 1.19791666667vw;
+  letter-spacing: 0.08em;
+  text-align: left;
+
+  &::placeholder {
+    color: #2E2E2E59;
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+}

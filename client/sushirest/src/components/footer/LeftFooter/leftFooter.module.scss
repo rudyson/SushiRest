@@ -1,0 +1,27 @@
+%navigateName {
+  color: #F5F5F5;
+  font-family: NotoSansBold;
+  font-weight: 700;
+  font-size: 1.66666666667vw;
+  line-height: 2.39583333333vw;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10.4166666667vw;
+  margin-top: 3.125vw;
+
+  h1 {
+    width: 10.4166666667vw;
+    height: 2.39583333333vw;
+    @extend %navigateName;
+
+    a {
+      @extend %navigateName;
+    }
+  }
+}

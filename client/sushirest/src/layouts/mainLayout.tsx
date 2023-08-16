@@ -1,8 +1,7 @@
 import '../App.css';
 import {Outlet} from "react-router-dom";
-import Header from "../components/pages/header/header.tsx";
-import Footer from "../components/pages/footer/footer.tsx";
-
+import Footer from "../components/footer/footer.tsx";
+import Header from "../components/header/header.tsx";
 const MainLayout= () => {
     return (
         <>

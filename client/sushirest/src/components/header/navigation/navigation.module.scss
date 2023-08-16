@@ -1,0 +1,34 @@
+%navText {
+    margin-top: 3.4375vw;
+    margin-left: 6.25vw;
+
+    position: relative;
+    z-index: 999;
+    color: #F5F5F5;
+    text-transform: uppercase;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+.linkText {
+    font-size: 1.04166666667vw;
+    line-height: 1.50833333333vw;
+    text-decoration: none;
+    font-family: NotoSansRegular;
+
+    &:first-child{
+        margin-left: 9.73958333333vw;
+    }
+    @extend %navText
+}
+
+.active{
+    font-size: 1.25vw;
+    line-height: 1.80989583333vw;
+    font-family: NotoSansMedium;
+    text-decoration: underline;
+    @extend %navText
+}
+

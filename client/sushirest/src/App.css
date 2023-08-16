@@ -5,16 +5,18 @@
 }
 .starComponent {
   position: absolute;
-
-  margin-left: 12.2395833333vw;
-}
-
-.star {
   margin-top: 2.08333333333vw;
+  margin-left: 12.2395833333vw;
+  display: flex;
+  flex-direction: row;
+}
+.starLabel{
+  display: flex;
+}
+.star {
   margin-right: 0.41666666666vw;
   width: 1.24166666667vw;
   height: 1.24166666667vw;
-
 
   transition: all 0.17s;
 }
