@@ -6,19 +6,19 @@ import 'swiper/scss';
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 
-import {useEffect, useState} from "react";
-import axios from "axios";
+import {useEffect} from "react";
 import {TopPosSlide} from "../../../../index.ts";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchTopPosSlider} from "../../../../store/slices/topPosition/topPositionSlice.ts";
 
 export const TopPositionSlider = () => {
-    const [items, setItems] = useState([1])
-    const fetchTopPos = async () => {
-        const res = await axios.get('https://64c523fec853c26efada8b82.mockapi.io/topPositions')
-        setItems(res.data)
-    }
+    const items = useSelector((state) => state.topPosition.items)
+    const dispatch = useDispatch()
+
     useEffect(() => {
-        fetchTopPos()
+        dispatch(fetchTopPosSlider())
     }, [])
+
     return (
         <div className={style.wrapper}>
             <Swiper className={style.wrapperSwiper}

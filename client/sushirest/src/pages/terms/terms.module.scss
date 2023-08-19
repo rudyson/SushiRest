@@ -1,0 +1,38 @@
+%mainText {
+  font-family: NotoSansRegular;
+  font-size: 1.04166666667vw;
+  line-height: 1.51041666667vw;
+  letter-spacing: 0.04em;
+  text-align: left;
+  color: #000000;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 5.20833333333vw;
+  padding-left: 10.4166666667vw;
+  padding-right: 10.4166666667vw;
+  margin-bottom: 5.20833333333vw;;
+  h1 {
+    font-family: NotoSansMedium;
+    font-size: 3.38541666667vw;
+    line-height: 4.89583333333vw;
+    letter-spacing: 0.15em;
+    text-align: left;
+    color: #2E2E2E;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    margin-top: 2.5vw;
+    @extend %mainText;
+  }
+
+  p {
+    margin-top: 2vw;
+    margin-left: 1vw;
+    @extend %mainText;
+  }
+}
